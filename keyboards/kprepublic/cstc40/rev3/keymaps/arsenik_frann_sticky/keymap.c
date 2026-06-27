@@ -165,3 +165,18 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     return !tap_keycode_is_tap_preferred(keycode);
 }
+
+// RGB layer indicators
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    switch(get_highest_layer(layer_state|default_layer_state)) {
+        case 7:
+            rgb_matrix_set_color(46, RGB_RED);
+            break;
+        case 4:
+            rgb_matrix_set_color(36, RGB_GREEN);
+            break;
+        default:
+            break;
+    }
+    return false;
+}
