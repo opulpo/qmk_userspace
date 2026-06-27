@@ -9,6 +9,7 @@ enum arsenik_layers {
     _num_nav,
     _num_pad,
     _fun_pad,
+    _reboot,
 };
 
 enum custom_keycodes {
@@ -34,10 +35,10 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_base] = ARSENIK_LAYOUT(
-                            KC_CAPS,  KC_1,  KC_2,   KC_3,   KC_4,   KC_5,        KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
-                            KC_TAB,   KC_Q,  KC_W,   KC_E,   KC_R,   KC_T,        KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,
-                            KC_ESC,   KC_A,  KC_SS,  KC_DD,  KC_FF,  KC_G,        KC_H,  KC_JJ,  KC_KK,    KC_LL,   KC_SCLN,  KC_ENTER,
-                            KC_LSFT,  KC_Z,  KC_X,   KC_C,   KC_V,   KC_B,        KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_UP,
+                        KC_CAPS,  KC_1,  KC_2,   KC_3,   KC_4,   KC_5,        KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
+                        KC_TAB,   KC_Q,  KC_W,   KC_E,   KC_R,   KC_T,        KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,
+                        KC_ESC,   KC_A,  KC_SS,  KC_DD,  KC_FF,  KC_G,        KC_H,  KC_JJ,  KC_KK,    KC_LL,   KC_SCLN,  KC_ENTER,
+                        KC_LSFT,  KC_Z,  KC_X,   KC_C,   KC_V,   KC_B,        KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_UP,
 
     KC_LGUI, KC_LALT, KC_LCTL, LTHUMB_TUCK, LTHUMB_HOME, LTHUMB_REACH,      RTHUMB_REACH, RTHUMB_HOME, RTHUMB_TUCK, KC_LEFT, KC_RGHT, KC_DOWN
     ),
@@ -81,11 +82,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_fun_pad] = ARSENIK_LAYOUT(
         __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
-        __,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  __,
+        __,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  MO(_reboot),
         __,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   XX,        XX,      KC_LCTL,  KC_LALT,  KC_LGUI,  __,  __,
         __,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  XX,        XX,      UG_SATU,  UG_SPDU,  XX,       XX,  __,
 
         __, __, __,     __,  KC_SPC,  __,        __,  KC_SPC,  __, __, __, __
+    ),
+
+    [_reboot] = ARSENIK_LAYOUT(
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+   QK_BOOT,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+
     ),
 
 };
