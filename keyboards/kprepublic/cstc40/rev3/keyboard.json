@@ -56,6 +56,11 @@
             {"matrix": [0, 1], "x": 20, "y": 0, "flags": 4},
             {"matrix": [0, 0], "x": 0, "y": 0, "flags": 1}
         ],
+        "animations": {
+            "typing_heatmap": true,
+            "solid_reactive_simple": true
+        },
+        "sleep": true,
         "max_brightness": 180
     },
     "usb": {
