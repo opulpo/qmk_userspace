@@ -81,12 +81,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_fun_pad] = ARSENIK_LAYOUT(
-        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
-        __,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  MO(_reboot),
-        __,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   XX,        XX,      KC_LALT,  KC_LCTL,  KC_LGUI,  __,  __,
-        __,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  XX,        XX,      UG_SATU,  UG_SPDU,  XX,       XX,  __,
+        __,      __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        KC_VOLU, KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  MO(_reboot),
+        KC_VOLD, KC_F5,  KC_F6,   KC_F7,   KC_F8,   XX,        XX,      KC_LALT,  KC_LCTL,  KC_LGUI,  __,  __,
+        __,      KC_F9,  KC_F10,  KC_F11,  KC_F12,  XX,        XX,      UG_SATU,  UG_SPDU,  XX,       XX,  __,
 
-                                  __,  KC_SPC,  __,        __,  KC_SPC,  __
+                                      __,  KC_SPC,  __,        __,  KC_SPC,  __
     ),
 
     [_reboot] = ARSENIK_LAYOUT(
