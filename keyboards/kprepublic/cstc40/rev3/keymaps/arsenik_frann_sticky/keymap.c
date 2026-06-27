@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __,  C(AS(A)),  KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,          AS(MINS),  AS(4),    AS(5),    AS(6),    AS(0),     __,
         __,  C(AS(Z)),  C(AS(X)),  C(AS(C)),  C(AS(V)),  S(KC_TAB),        AS(COMM),  AS(1),    AS(2),    AS(3),    AS(DOT),   __,
 
-        __, __, __,                LSFT_T(KC_DEL),  KC_SPC,  __,        __,  KC_SPC,  KC_ESC, __, __, __
+        __,  __,        __,        __,        KC_SPC,    __,               __,  KC_SPC,  __, __, __, __
     ),
 
     [_fun_pad] = ARSENIK_LAYOUT(
