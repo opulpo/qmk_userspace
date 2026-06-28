@@ -57,7 +57,7 @@
 #    define LTHUMB_REACH LT(_fun_pad, KC_BSPC)
 #    define RTHUMB_REACH LT(_num_row, KC_ENT)
 #    define LTHUMB_TUCK  OS_LSFT
-#    define RTHUMB_TUCK  OSL(_symbols)
+#    define RTHUMB_TUCK  OS_RALT
 #    define RTHUMB_HOME  LT(_vim_nav, KC_SPC)
 #    define LTHUMB_HOME  RTHUMB_HOME
 #else
