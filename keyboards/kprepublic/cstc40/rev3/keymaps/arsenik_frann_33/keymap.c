@@ -9,6 +9,7 @@ enum arsenik_layers {
     _num_nav,
     _num_pad,
     _fun_pad,
+    _reboot,
 };
 
 enum custom_keycodes {
@@ -34,12 +35,12 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_base] = ARSENIK_LAYOUT(
-                            KC_CAPS,  KC_1,  KC_2,   KC_3,   KC_4,   KC_5,        KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
-                            KC_TAB,   KC_Q,  KC_W,   KC_E,   KC_R,   KC_T,        KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,
-                            KC_ESC,   KC_A,  KC_SS,  KC_DD,  KC_FF,  KC_G,        KC_H,  KC_JJ,  KC_KK,    KC_LL,   KC_SCLN,  KC_ENTER,
-                            KC_LSFT,  KC_Z,  KC_X,   KC_C,   KC_V,   KC_B,        KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_UP,
+            KC_CAPS,  KC_1,  KC_2,   KC_3,   KC_4,   KC_5,        KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
+            KC_TAB,   KC_Q,  KC_W,   KC_E,   KC_R,   KC_T,        KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,
+            KC_ESC,   KC_A,  KC_SS,  KC_DD,  KC_FF,  KC_G,        KC_H,  KC_JJ,  KC_KK,    KC_LL,   KC_SCLN,  KC_ENTER,
+            KC_LSFT,  KC_Z,  KC_X,   KC_C,   KC_V,   KC_B,        KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_UP,
 
-    KC_LALT, KC_LGUI, MO(_fun_pad), LTHUMB_TUCK, LTHUMB_HOME, LTHUMB_REACH,      RTHUMB_REACH, RTHUMB_HOME, RTHUMB_TUCK, KC_LEFT, KC_RGHT, KC_DOWN
+                   LTHUMB_TUCK, LTHUMB_HOME, LTHUMB_REACH,        RTHUMB_REACH, RTHUMB_HOME, RTHUMB_TUCK
     ),
 
     [_symbols] = ARSENIK_LAYOUT(
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __,  AS(LCBR),  AS(LPRN),  AS(RPRN),  AS(RCBR),  AS(EQL),         AS(BSLS),  AS(PLUS),  AS(MINS),  AS(SLSH),  AS(DQUO),  __,
         __,  TILDE,     AS(LBRC),  AS(RBRC),  AS(UNDS),  AS(HASH),        AS(PIPE),  AS(EXLM),  AS(SCLN),  AS(COLN),  AS(QUES),  __,
 
-        __,  __,        __,        MO(_num_row), KC_SPC, __,              __,       KC_SPC, MO(_num_row),  __,        __,        __
+                                        MO(_num_row), KC_SPC, __,              __, KC_SPC, MO(_num_row)
     ),
 
     // Not fully implemented yet
@@ -58,34 +59,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __,  AS(1),  AS(2),  AS(3),  AS(4),  AS(5),        AS(6),     AS(7),     AS(8),    AS(9),     AS(0),     __,
         __,  ODK_1,  ODK_2,  ODK_3,  ODK_4,  ODK_5,        AS(MINS),  AS(COMM),  AS(DOT),  AS(COLN),  AS(SLSH),  __,
 
-        __, __, __,        SYMBOLS,  KC_SPC,  __,        __,  KC_SPC,  SYMBOLS, __, __, __
+                                  __,  KC_SPC,  __,        __,  KC_SPC,  __
     ),
 
     [_vim_nav] = ARSENIK_LAYOUT(
         __,  G(KC_1),      G(KC_2),      G(KC_3),       G(KC_4),   G(KC_5),        G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),       __,
-        __,  TG(_num_nav), C(AS(T)),     KC_WBAK,       KC_WFWD,   XX,             KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   G(AS(P)),      __,
+        __,  LALT(KC_ESC), C(AS(T)),     KC_WBAK,       KC_WFWD,   XX,             KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   TG(_num_nav),      __,
         __,  LALT(KC_TAB), LCTL(KC_TAB), S(KC_TAB),     KC_TAB,    XX,             KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  XX,            __,
-        __,  LCTL(KC_PMNS), LCTL(KC_PPLS),     LCTL(KC_PGUP), LCTL(KC_PGDN), XX,     MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  XX,            __,
+        __,  LCTL(KC_PMNS), LCTL(KC_PPLS), LCTL(KC_PGUP), LCTL(KC_PGDN), XX,     MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  XX,            __,
 
-                 __, __, __,                     LSFT_T(KC_DEL),  __,  __,        __,  __,  KC_ESC, __, __, __
+                                                         KC_DEL,  __, __,         __, __, KC_ESC
     ),
 
     [_num_nav] = ARSENIK_LAYOUT(
         __,  G(KC_1),   G(KC_2),   G(KC_3),   G(KC_4),   G(KC_5),          G(KC_6),   G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),   __,
-        __,  TG(_num_nav), KC_HOME,   KC_UP,     KC_END,    KC_PGUP,          AS(SLSH),  AS(7),    AS(8),    AS(9),    G(AS(P)),  __,
+        __,  LALT(KC_ESC), KC_HOME,   KC_UP,     KC_END,    KC_PGUP,          AS(SLSH),  AS(7),    AS(8),    AS(9), TG(_num_nav),  __,
         __,  C(AS(A)),  KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,          AS(MINS),  AS(4),    AS(5),    AS(6),    AS(0),     __,
         __,  C(AS(Z)),  C(AS(X)),  C(AS(C)),  C(AS(V)),  S(KC_TAB),        AS(COMM),  AS(1),    AS(2),    AS(3),    AS(DOT),   __,
 
-        __, __, __,                LSFT_T(KC_DEL),  KC_SPC,  __,        __,  KC_SPC,  KC_ESC, __, __, __
+                                    __,        KC_SPC,    __,               __,  KC_SPC,  __
     ),
 
     [_fun_pad] = ARSENIK_LAYOUT(
-        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
-        __,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  __,
-        __,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   XX,        XX,      KC_LCTL,  KC_LALT,  KC_LGUI,  __,  __,
-        __,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  XX,        XX,      UG_SATU,  UG_SPDU,  XX,       XX,  __,
+        __,      __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        KC_VOLU, KC_F1,  KC_F2,   KC_F3,   KC_F4,   XX,        UG_TOGG, UG_NEXT,  UG_HUEU,  UG_VALU,  XX,  MO(_reboot),
+        KC_VOLD, KC_F5,  KC_F6,   KC_F7,   KC_F8,   XX,        XX,      KC_LALT,  KC_LCTL,  KC_LGUI,  __,  __,
+        KC_MUTE, KC_F9,  KC_F10,  KC_F11,  KC_F12,  XX,        XX,      UG_SATU,  UG_SPDU,  XX,       XX,  __,
 
-        __, __, __,     SYMBOLS,  KC_SPC,  __,        __,  KC_SPC,  SYMBOLS, __, __, __
+                                      __,  KC_SPC,  __,        __,  KC_SPC,  __
+    ),
+
+    [_reboot] = ARSENIK_LAYOUT(
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+   QK_BOOT,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+        __,  __,     __,      __,      __,      __,        __,      __,       __,       __,       __,  __,
+
+                              __,      __,      __,        __,      __,       __
+
     ),
 
 };
@@ -153,4 +164,19 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     return !tap_keycode_is_tap_preferred(keycode);
+}
+
+// RGB layer indicators
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    switch(get_highest_layer(layer_state|default_layer_state)) {
+        case 7:
+            rgb_matrix_set_color(46, RGB_RED);
+            break;
+        case 4:
+            rgb_matrix_set_color(36, RGB_GREEN);
+            break;
+        default:
+            break;
+    }
+    return false;
 }
