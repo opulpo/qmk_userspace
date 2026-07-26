@@ -51,6 +51,8 @@
  * `get_tapping_term` in the `keymap.c` file.
  */
 
+#define MAGIC_LAYER_CTRL_TAB_LAYER 3
+
 #undef RGBLIGHT_ANIMATIONS
 #undef RGBLIGHT_EFFECT_BREATHING
 #undef RGBLIGHT_EFFECT_RAINBOW_MOOD

@@ -63,12 +63,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_vim_nav] = ARSENIK_LAYOUT(
-        __,  G(KC_1),      G(KC_2),      G(KC_3),      G(KC_4),   G(KC_5),            G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),       __,
-        __,  TG(_num_nav), C(AS(T)),     KC_WBAK,      KC_WFWD,   A(KC_RIGHT),        KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   TG(_num_nav),  __,
-        __,  C(KC_TAB),    LCG(KC_LALT), S(KC_TAB),    KC_TAB,    XX,                 KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  XX,            __,
-        __,  C(KC_PMNS),   C(KC_PPLS),   G(S(KC_TAB)), G(KC_TAB), A(KC_LEFT),         MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  XX,            __,
+        __,  G(KC_1),      G(KC_2),    G(KC_3),      G(KC_4),      G(KC_5),            G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),       __,
+        __,  TG(_num_nav), C(AS(T)),   LCS(KC_TAB),  LCTL(KC_TAB), A(KC_RIGHT),        KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   TG(_num_nav),  __,
+        __,  KC_WBAK,      KC_WFWD,    S(KC_TAB),    KC_TAB,       XX,                 KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  XX,            __,
+        __,  C(KC_PMNS),   C(KC_PPLS), G(S(KC_TAB)), G(KC_TAB),    A(KC_LEFT),         MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  XX,            __,
 
-                                                             KC_DEL,  __, __,         __, __, KC_ESC
+                                                              KC_DEL,  __, __,         __, __, KC_ESC
     ),
 
     [_num_nav] = ARSENIK_LAYOUT(
