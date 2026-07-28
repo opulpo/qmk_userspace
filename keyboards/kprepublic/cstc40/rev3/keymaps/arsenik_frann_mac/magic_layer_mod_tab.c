@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include QMK_KEYBOARD_H
-
 #ifndef MAGIC_LAYER_CTRL_TAB_LAYER
 #    error "Magic Layer Mod-Tab requires MAGIC_LAYER_CTRL_TAB_LAYER to be defined. Please set it the layer of your choice in your config.h"
 #endif

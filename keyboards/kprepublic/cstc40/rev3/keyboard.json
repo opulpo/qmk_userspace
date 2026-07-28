@@ -68,8 +68,5 @@
     },
     "ws2812": {
         "pin": "B13"
-    },
-    "modules": [
-        "frann/magic_layer_mod_tab"
-    ]
+    }
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "keycodes.h"
+#include "keycodes_aekeynox.h"
 #include "layouts.h"
 
 // Symbols layer access
@@ -14,12 +14,12 @@
 
 // TODO: find better names for those macros ?
 #ifdef MAC_MODIFIERS
-#    define _GUI_T LALT_T
+#    define _GUI_T LCTL_T
 #    define _CTL_T LGUI_T
-#    define _ALT_T LCTL_T
-#    define _GUI   KC_LALT
+#    define _ALT_T LALT_T
+#    define _GUI   KC_LCTL
 #    define _CTL   KC_LGUI
-#    define _ALT   KC_LCTL
+#    define _ALT   KC_LALT
 #else
 #    define _GUI_T LGUI_T
 #    define _CTL_T LCTL_T
@@ -47,24 +47,21 @@
 
 // Extra simple config for beginners with bigger keyboards
 #if defined SIMPLE_THUMBS
-#    define LTHUMB_TUCK  _ALT
-#    define LTHUMB_HOME  _CTL
-#    define LTHUMB_REACH _GUI
-#    define RTHUMB_REACH MO(_num_nav)
-#    define RTHUMB_HOME  KC_SPC
-#    define RTHUMB_TUCK  SYMBOLS
+#    define LTHUMB_WIDE  _GUI
+#    define LEFT_THUMB   _ALT
+#    define THUMB_BAR    KC_SPC
+#    define RIGHT_THUMB  SYMBOLS
+#    define RTHUMB_WIDE  MO(_num_nav)
 #elif defined VIM_NAVIGATION
-#    define LTHUMB_REACH KC_LCTL
-#    define RTHUMB_REACH KC_RCTL
-#    define LTHUMB_TUCK  LSFT_T(KC_BSPC)
-#    define RTHUMB_TUCK  SYMBOLS_T(KC_ENT)
-#    define RTHUMB_HOME  LT(_vim_nav, KC_SPC)
-#    define LTHUMB_HOME  RTHUMB_HOME
+#    define LTHUMB_WIDE  LT(_vim_nav, KC_BSPC)
+#    define LEFT_THUMB   OS_LSFT
+#    define THUMB_BAR    LT(_vim_nav, KC_SPC)
+#    define RIGHT_THUMB  OSL(_symbols)
+#    define RTHUMB_WIDE  LT(_num_row, KC_ENT)
 #else
-#    define LTHUMB_TUCK  LSFT_T(KC_BSPC)
-#    define LTHUMB_HOME  LT(_num_nav, KC_BSPC)
-#    define LTHUMB_REACH XX
-#    define RTHUMB_REACH XX
-#    define RTHUMB_HOME  LTHUMB_HOME
-#    define RTHUMB_TUCK  SYMBOLS_T(KC_ENT)
+#    define LTHUMB_WIDE  LT(_num_nav, KC_BSPC)
+#    define LEFT_THUMB   OS_LSFT
+#    define THUMB_BAR    LT(_num_nav, KC_SPC)
+#    define RIGHT_THUMB  OSL(_symbols)
+#    define RTHUMB_WIDE  LT(_num_row, KC_ENT)
 #endif

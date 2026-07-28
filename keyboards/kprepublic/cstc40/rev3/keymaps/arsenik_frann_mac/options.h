@@ -20,7 +20,7 @@
  * and t/n on a Colemak keyboard.
  */
 
-// #define MAC_MODIFIERS
+#define MAC_MODIFIERS
 /* Swaps around home-row-mods from Meta, Ctrl, Alt to Alt, Meta, Ctrl, as it
  * may make more sense on a Mac, like to keep common shortcuts accessible with
  * the Ergo‑L layout, for instance
