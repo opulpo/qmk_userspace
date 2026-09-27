@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_vim_nav] = ARSENIK_LAYOUT(
         __,  G(KC_1),      G(KC_2),    G(KC_3),      G(KC_4),      G(KC_5),        G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),    __,
-        __,  TG(_num_nav), G(KC_GRV),    LSG(KC_TAB), LGUI(KC_TAB), C(S(KC_TAB)),   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   G(AS(T)),  __,
+        __,  TG(_num_nav), G(KC_GRV),    LSG(KC_TAB), LGUI(KC_TAB), C(S(KC_TAB)),   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   G(AS(W)),  __,
         __,  G(KC_LEFT),   G(KC_RGHT),   S(KC_TAB),   KC_TAB,       C(KC_TAB),      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  G(AS(L)),  __,
         __,  G(AS(Z)),     G(AS(X)),     G(AS(C)),    G(AS(V)),     G(AS(D)),       A(S(KC_LEFT)),  A(KC_LEFT),   A(KC_RIGHT),  A(S(KC_RIGHT)), G(AS(F)),  __,
 
