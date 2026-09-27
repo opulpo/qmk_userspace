@@ -63,19 +63,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_vim_nav] = ARSENIK_LAYOUT(
-        __,  G(KC_1),      G(KC_2),    G(KC_3),      G(KC_4),      G(KC_5),        G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),       __,
-        __,  TG(_num_nav), LGUI(KC_GRV), LSG(KC_TAB), LGUI(KC_TAB), XX,             KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   TG(_num_nav),  __,
-        __,  G(KC_LEFT),   G(KC_RGHT), S(KC_TAB),    KC_TAB,       A(KC_I),        KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  XX,  __,
-        __,  C(KC_PMNS),   C(KC_PPLS), C(S(KC_TAB)), C(KC_TAB),    G(KC_I),        MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  XX,            __,
+        __,  G(KC_1),      G(KC_2),    G(KC_3),      G(KC_4),      G(KC_5),        G(KC_6),  G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),    __,
+        __,  TG(_num_nav), G(KC_GRV),    LSG(KC_TAB), LGUI(KC_TAB), C(S(KC_TAB)),   KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   G(AS(T)),  __,
+        __,  G(KC_LEFT),   G(KC_RGHT),   S(KC_TAB),   KC_TAB,       C(KC_TAB),      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  G(AS(L)),  __,
+        __,  G(AS(Z)),     G(AS(X)),     G(AS(C)),    G(AS(V)),     G(AS(D)),       A(S(KC_LEFT)),  A(KC_LEFT),   A(KC_RIGHT),  A(S(KC_RIGHT)), G(AS(F)),  __,
 
-                                                            __, KC_DEL, KC_ESC, MO(_fun_pad), __
+                                                                __, KC_DEL, KC_ESC, MO(_fun_pad), __
     ),
 
     [_num_nav] = ARSENIK_LAYOUT(
         __,  G(KC_1),      G(KC_2),   G(KC_3),   G(KC_4),   G(KC_5),          G(KC_6),   G(KC_7),  G(KC_8),  G(KC_9),  G(KC_0),       __,
         __,  TG(_num_nav), KC_HOME,   KC_UP,     KC_END,    KC_PGUP,          AS(SLSH),  AS(7),    AS(8),    AS(9),    TG(_num_nav),  __,
-        __,  C(AS(A)),     KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,          AS(MINS),  AS(4),    AS(5),    AS(6),    AS(0),         __,
-        __,  C(AS(Z)),     C(AS(X)),  C(AS(C)),  C(AS(V)),  KC_TAB,           AS(COMM),  AS(1),    AS(2),    AS(3),    AS(DOT),       __,
+        __,  G(AS(A)),     KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,          AS(MINS),  AS(4),    AS(5),    AS(6),    AS(0),         __,
+        __,  G(AS(Z)),     G(AS(X)),  G(AS(C)),  G(AS(V)),  G(AS(D)),         AS(COMM),  AS(1),    AS(2),    AS(3),    AS(DOT),       __,
 
                                                             __, KC_BSPC, __, KC_SPC, __
     ),
