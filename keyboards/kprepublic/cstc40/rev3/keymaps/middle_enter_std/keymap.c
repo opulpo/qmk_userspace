@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __,  AS(LCBR),  AS(LPRN),  AS(RPRN),  AS(RCBR),  AS(EQL),         AS(BSLS),  AS(PLUS),  AS(MINS),  AS(SLSH),  AS(DQUO),  __,
         __,  TILDE,     AS(LBRC),  AS(RBRC),  AS(UNDS),  AS(HASH),        AS(PIPE),  AS(EXLM),  AS(SCLN),  AS(COLN),  AS(QUES),  __,
 
-                                                     __, KC_SPC, KC_ENTER, __, __
+                                     LT(_num_row, KC_ESC), KC_SPC, KC_ENTER, __, __
     ),
 
     // Not fully implemented yet
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         __,  AS(1),  AS(2),  AS(3),  AS(4),  AS(5),        AS(6),     AS(7),     AS(8),    AS(9),     AS(0),     __,
         __,  ODK_1,  ODK_2,  ODK_3,  ODK_4,  ODK_5,        AS(MINS),  AS(COMM),  AS(DOT),  AS(COLN),  AS(SLSH),  __,
 
-                                        __, KC_BSPC, __, KC_SPC, __
+                                        __, KC_BSPC, __, S(KC_SPC), __
     ),
 
     [_vim_nav] = ARSENIK_LAYOUT(
