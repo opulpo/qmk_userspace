@@ -96,7 +96,7 @@
 // Note: you may have to release and rehold the layer to drop modifiers you
 // no longer need.
 
-// #define ENABLE_MOD_HOLDS
+#define ENABLE_MOD_HOLDS
 
 // [Experimental]
 // Uncomment the following line to pin any held Ctrl/Alt/GUI modifier for as long
