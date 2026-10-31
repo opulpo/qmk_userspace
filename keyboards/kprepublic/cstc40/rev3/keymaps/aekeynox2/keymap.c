@@ -78,7 +78,7 @@ enum custom_keycodes {
         __,  SC_UNDO,  SC_CUT,    SC_COPY,     SC_PASTE,    SC_REDO,        A(S(KC_LEFT)),  A(KC_LEFT),   A(KC_RIGHT),  A(S(KC_RIGHT)), G(AS(F)), __
 #if defined ARSENIK
 #    define VIM_NAV_THUMBS \
-                                   KC_CAPS,  LT(_fn_media, KC_DEL),  KC_ESC,  MO(_fn_media),  LSK_RALT
+                                   KC_LSFT,  LT(_fn_media, KC_DEL),  KC_ESC,  MO(_fn_media),  LSK_RALT
 #else // SELENIUM
 #    define VIM_NAV_THUMBS \
                      KC_CAPS,  LT(_fn_media, KC_DEL),  MO(_num_row),        __,  MO(_fn_media),  LSK_RALT
