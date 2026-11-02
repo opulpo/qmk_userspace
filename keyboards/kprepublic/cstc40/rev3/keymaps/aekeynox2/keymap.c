@@ -73,9 +73,9 @@ enum custom_keycodes {
 
 // 3. VimNav layer -- HJKL arrow cluster + mouse scroll + GUI shortcuts (not accessible by default)
 #define VIM_NAV_ROWS \
-        __,  TO(_num_lock),  SC_CTL_W,  VIM_PREV,    VIM_NEXT,    G(AS(T)),             KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   TO(_num_lock),  __,\
-        __,  SC_ALL,   SC_SAVE,   S(KC_TAB),   KC_TAB,      G(AS(D)),             KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  G(AS(L)),             __,\
-        __,  SC_UNDO,  SC_CUT,    SC_COPY,     SC_PASTE,    SC_REDO,        A(S(KC_LEFT)),  A(KC_LEFT),   A(KC_RIGHT),  A(S(KC_RIGHT)), G(AS(F)), __
+    __, TO(_num_lock), SC_CTL_W,  VIM_PREV,    VIM_NEXT,    G(AS(T)),           KC_HOME,  KC_PGDN,    KC_PGUP,     KC_END,         TO(_num_lock), __,\
+        __,  SC_ALL,   SC_SAVE,   S(KC_TAB),   KC_TAB,      G(AS(D)),           KC_LEFT,  KC_DOWN,    KC_UP,       KC_RGHT,        G(AS(L)),      __,\
+        __,  SC_UNDO,  SC_CUT,    SC_COPY,     SC_PASTE,    SC_REDO,      A(S(KC_LEFT)),  A(KC_LEFT), A(KC_RIGHT), A(S(KC_RIGHT)), G(AS(F)),      __
 #if defined ARSENIK
 #    define VIM_NAV_THUMBS \
                                    KC_LSFT,  LT(_fn_media, KC_DEL),  KC_ESC,  MO(_fn_media),  LSK_RALT
@@ -99,9 +99,9 @@ enum custom_keycodes {
 
 // 5. NumRow layer -- numbers on homerow (not accessible by default)
 #define NUM_ROW_ROWS \
-        __,  AS_S1,  AS_S2,  AS_S3,  AS_S4,  AS_S5,        AS_S6,     AS_S7,     AS_S8,    AS_S9,     AS_S0,     __,\
-        __,  AS(1),  AS(2),  AS(3),  AS(4),  AS(5),        AS(6),     AS(7),     AS(8),    AS(9),     AS(0),     __,\
-        __,  XX,     XX,     XX,     XX,     XX,           AS(MINS),  AS(COMM),  AS(DOT),  AS(COLN),  AS(SLSH),  __
+        __,  AS_S1,    AS_S2,    AS_S3,    G(AS(R)), AS(R),        S(AS(J)),  AS_S7,     AS_S8,    AS_S9,     AS_S0,     __,\
+        __,  AS(1),    AS(2),    AS(3),    AS(4),    AS(5),        AS(6),     AS(7),     AS(8),    AS(9),     AS(0),     __,\
+        __,  G(AS(K)), G(AS(M)), G(AS(G)), G(AS(H)), AS(H),        AS(MINS),  AS(COMM),  AS(DOT),  AS(COLN),  AS(SLSH),  __
 #if defined ARSENIK
 #    define NUM_ROW_THUMBS \
                                      __,  S(KC_SPC),  __,  S(KC_SPC),  KC_RALT
