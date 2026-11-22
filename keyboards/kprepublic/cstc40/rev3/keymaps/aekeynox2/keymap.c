@@ -61,7 +61,7 @@ enum custom_keycodes {
 // 2. Symbols layer -- programming symbols (AltGr layer for Ergol)
 #define SYMBOLS_ROWS \
         __,  AS(CIRC),  AS(LABK),  AS(RABK),  AS(DLR),   AS(PERC),        AS(AT),    AS(AMPR),  AS(ASTR),  AS(QUOT),  AS(GRV),   __,\
-        __,  AS(LCBR),  AS(LPRN),  AS(RPRN),  AS(RCBR),  AS(EQL),         AS(BSLS),  AS(PLUS),  AS(MINS),  AS(SLSH),  AS(DQUO),  __,\
+        __,  AS(LCBR),  ODK_1,     ODK_2,     AS(RCBR),  AS(EQL),         AS(BSLS),  AS(PLUS),  AS(MINS),  AS(SLSH),  AS(DQUO),  __,\
         __,  TILDE,     AS(LBRC),  AS(RBRC),  AS(UNDS),  AS(HASH),        AS(PIPE),  AS(EXLM),  AS(SCLN),  AS(COLN),  AS(QUES),  __
 #if defined ARSENIK
 #    define SYMBOLS_THUMBS \
@@ -343,8 +343,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
             case TILDE: TILDE_SEQUENCE; return false;
-            case ODK_1: ODK1_SEQUENCE; return false;
-            case ODK_2: ODK2_SEQUENCE; return false;
+            case ODK_1: tap_code(KC_O); tap_code(KC_H); return false;
+            case ODK_2: tap_code(KC_O); tap_code(KC_J); return false;
             case ODK_3: ODK3_SEQUENCE; return false;
             case ODK_4: ODK4_SEQUENCE; return false;
             case ODK_5: ODK5_SEQUENCE; return false;
